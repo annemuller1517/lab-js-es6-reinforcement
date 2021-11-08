@@ -140,7 +140,10 @@ promo20(users2);
 // ***************************************************************************
 
 const addActive = users => {
-  // Your code goes here ...
+  users.forEach(elem => {
+    elem.isActive = true
+  })
+  console.log(users)
 };
 
 addActive(usersArray);
