@@ -121,8 +121,12 @@ genderCount(data);
 
 const users2 = getUsersCreditDetails(usersArray)
 const promo20 = users2 => {
-  let rich = users2.filter((elem, index) => users2[index].balance.split("$")[1] > "20,000")
-    console.log(rich)
+  let rich = users2.filter((elem, index) => parseFloat(users2[index].balance.split("$")[1].replace(/,/g, '')) > 20000)
+  rich.forEach(element => {
+  console.log(`Dears ${element.lastName}, since your balance is ${element.balance}, you are eligible to apply for this awesome credit card.`)
+    
+  });
+
   // Your code goes here ...
 };
 promo20(users2);
